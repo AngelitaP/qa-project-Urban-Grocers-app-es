@@ -13,3 +13,7 @@ def post_new_client_kit(kit_body):
     variable_headers=data.headers.copy()
     variable_headers["Authorization"]=f"Bearer {auth_token}"
     return requests.post(configuration.URL_SERVICE + configuration.KITS_PATH,  headers= variable_headers, json=kit_body)
+
+print(post_new_user(data.user_body).json()["authToken"])
+print(post_new_client_kit(data.kit_body).status_code)
+
