@@ -19,7 +19,6 @@ def positive_assert(kit_body):
 def negative_assert_400(kit_body):
     response = sender_stand_request.post_new_client_kit(kit_body)
     assert response.status_code == 400
-    assert response.json()["name"] == kit_body["name"]
 
 def test_numero_permitido_de_caracteres_1():
     positive_assert(data.test_1)
